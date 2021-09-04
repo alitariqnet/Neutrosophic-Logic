@@ -97,34 +97,66 @@ public class NeutrosophicLogic {
 	return 0.0;
 	}// TODO
 	
-	public static double foodMembership(int a) {
+	public static double foodMembershipRancid(int a) {
+	if(a<=0)
+		return 1.0;
 	
-		
-		return 0.0;
+	else if (a>0 && a<=7)
+		return (7-a)/(7-0);
+
+	return 0.0;
 	}
-public static double foodNonMembership(int a) {
-	
-		
+	public static double foodNonMembershipDelicious(int a) {
+	if(a<=3)
 		return 0.0;
+
+	else if (a>3 && a<10)
+		return (a-3)/(10-3);
+
+	return 1.0;
 	}
-public static double foodIndeterminate(int a) {
-	
+	public static double foodIndeterminateDelicious(int a) {
 	
 	return 0.0;
-}
-	public static Double environmentMembership(int a) {
-	
-		return 0.0;
 	}
-	public static Double environmentNonMembership(int a) {
+	public static double foodIndeterminateRancid(int a) {
+	
+	return 0.0;
+	}
+	public static Double environmentMembershipClean(int a) {
+	if(a<=3)
+		return 0.0;
+
+	else if (a>3 && a<10)
+		return (a-3)/(10-3);
+
+	return 1.0;
+	}
+	public static Double environmentMembershipDirty(int a) {
+	if(a<=0)
+		return 1.0;
+	
+	else if (a>0 && a<=7)
+		return (7-a)/(7-0);
+
+	return 0.0;
+	}
+	public static Double environmentNonMembershipClean(int a) {
 		
 		return 0.0;
 	}
-	public static Double environmentIndeterminate(int a) {
+	public static Double environmentNonMembershipDirty(int a) {
 		
 		return 0.0;
 	}
-	
+	public static Double environmentIndeterminateClean(int a) {
+		
+		return 0.0;
+	}
+	public static Double environmentIndeterminateDirty(int a) {
+		
+		return 0.0;
+	}
 	public static Double min(Double a,Double b) {
 		if (a<b)
 			return a;
