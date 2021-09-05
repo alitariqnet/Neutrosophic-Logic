@@ -43,29 +43,23 @@ public class NeutrosophicLogic {
 	if(a<0)
 		return 0.0;
 	
-	if (a>0 && a<5)
-		return 0.0;
+	if (a>0 && a<=7)
+		return (a-0)/(7-0);
 	
-	if(a>5)
-		return 0.0;
-	
-	return 0.0;
-	}// TODO 
+	return 1.0;
+	}
 	
 	// Service non-membership function for getting value for good service
 	public static double serviceNonMembershipGood(int a) {
 		
-		if(a<0)
-			return 0.0;
+		if(a<=3)
+			return 1.0;
 		
-		if (a>0 && a<5)
-			return 0.0;
-		
-		if(a>5)
-			return 0.0;
-		
+		if (a>3 && a<=10)
+			return (10-a)/(10-3);
+
 		return 0.0;
-	}// TODO
+	}
 	
 	// Service indeterminate function for getting value for poor service
 	public static double serviceIndeterminatePoor(int a) {
