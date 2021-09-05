@@ -152,14 +152,12 @@ public class NeutrosophicLogic {
 	public static Double min(Double a,Double b) {
 		if (a<b)
 			return a;
-		else
-			return b;
+		return b;
 	}
 	public static Double max(Double a,Double b) {
 		if (a>b)
 			return a;
-		else
-			return b;
+		return b;
 	}
 	
 }
