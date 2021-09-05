@@ -91,6 +91,23 @@ public class NeutrosophicLogic {
 		return (7-a)/(7-0);
 
 	return 0.0;
+	}public static double foodMembershipDelicious(int a) {
+	if(a<=0)
+		return 1.0;
+	
+	else if (a>0 && a<=7)
+		return (7-a)/(7-0);
+
+	return 0.0;
+	}
+	public static double foodNonMembershipRancid(int a) {
+	if(a<=3)
+		return 0.0;
+
+	else if (a>3 && a<10)
+		return (a-3)/(10-3);
+
+	return 1.0;
 	}
 	public static double foodNonMembershipDelicious(int a) {
 	if(a<=3)
