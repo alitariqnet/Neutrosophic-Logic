@@ -9,8 +9,6 @@ public class NeutrosophicLogic {
 
 	public static void main(String[] args) {
 
-		Double service = serviceMembershipPoor(7);
-		System.out.println(service);
 	}
 	
 	// Service membership function for getting value for poor service
