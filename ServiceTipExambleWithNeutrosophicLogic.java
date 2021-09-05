@@ -215,16 +215,28 @@ public class NeutrosophicLogic {
 		return 0.0;
 	}
 	
-	public static Double min(Double a,Double b) {
+	public static Double min(double a,double b) {
 		if (a<b)
 			return a;
 		return b;
 	}
-	
-	public static Double max(Double a,Double b) {
+	public static Double min(double a,double b, double c) {
+		if (a<b&&a<c)
+			return a;
+		else if (b<a&&b<c)
+			return b;
+		return c;
+	}
+	public static Double max(double a,double b) {
 		if (a>b)
 			return a;
 		return b;
 	}
-	
+	public static Double max(double a,double b, double c) {
+		if (a>b&&a>c)
+			return a;
+		else if (b>a&&b>c)
+			return b;
+		return c;
+	}
 }
