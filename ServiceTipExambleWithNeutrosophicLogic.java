@@ -62,32 +62,26 @@ public class NeutrosophicLogic {
 	// Service indeterminate function for getting value for poor service
 	public static double serviceIndeterminatePoor(int a) {
 		
-	if(a<0)
-		return 0.0;
+	if(a<=0)
+		return 1.0;
 	
-	if (a>0 && a<5)
-		return 0.0;
-	
-	if(a>5)
-		return 0.0;
-	
+	else if (a>0 && a<=8)
+		return ((8-a)/(8-0))*0.5;
+
 	return 0.0;
-	}// TODO
+	}
 	
 	// Service indeterminate function for getting value for good service
 	public static double serviceIndeterminateGood(int a) {
 		
-	if(a<0)
+	if(a<=3)
 		return 0.0;
-	
-	if (a>0 && a<5)
-		return 0.0;
-	
-	if(a>5)
-		return 0.0;
-	
-	return 0.0;
-	}// TODO
+		
+	else if (a>2 && a<10)
+		return ((a-2)/(10-2))*0.5;
+
+	return 1.0;
+	}
 	
 	public static double foodMembershipRancid(int a) {
 	if(a<=0)
