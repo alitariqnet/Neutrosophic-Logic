@@ -149,7 +149,7 @@ public class NeutrosophicLogic {
 		return 0.0;
 	}
 	
-	public static Double environmentMembershipClean(int a) {
+	public static double environmentMembershipClean(int a) {
 		
 		if(a<=3)
 			return 0.0;
@@ -160,7 +160,7 @@ public class NeutrosophicLogic {
 		return 1.0;
 	}
 	
-	public static Double environmentMembershipDirty(int a) {
+	public static double environmentMembershipDirty(int a) {
 		
 		if(a<=0)
 			return 1.0;
@@ -171,7 +171,7 @@ public class NeutrosophicLogic {
 		return 0.0;
 	}
 	
-	public static Double environmentNonMembershipClean(int a) {
+	public static double environmentNonMembershipClean(int a) {
 		
 		if(a<=3)
 			return 0.0;
@@ -182,7 +182,7 @@ public class NeutrosophicLogic {
 		return 1.0;
 	}
 	
-	public static Double environmentNonMembershipDirty(int a) {
+	public static double environmentNonMembershipDirty(int a) {
 		
 		if(a<=3)
 			return 0.0;
@@ -193,7 +193,7 @@ public class NeutrosophicLogic {
 		return 1.0;
 	}
 	
-	public static Double environmentIndeterminateClean(int a) {
+	public static double environmentIndeterminateClean(int a) {
 		
 		if(a<=3)
 			return 0.0;
@@ -204,7 +204,7 @@ public class NeutrosophicLogic {
 		return 1.0;
 	}
 	
-	public static Double environmentIndeterminateDirty(int a) {
+	public static double environmentIndeterminateDirty(int a) {
 		
 		if(a<=0)
 			return 1.0;
@@ -215,24 +215,24 @@ public class NeutrosophicLogic {
 		return 0.0;
 	}
 	
-	public static Double min(double a,double b) {
+	public static double min(double a,double b) {
 		if (a<b)
 			return a;
 		return b;
 	}
-	public static Double min(double a,double b, double c) {
+	public static double min(double a,double b, double c) {
 		if (a<b&&a<c)
 			return a;
 		else if (b<a&&b<c)
 			return b;
 		return c;
 	}
-	public static Double max(double a,double b) {
+	public static double max(double a,double b) {
 		if (a>b)
 			return a;
 		return b;
 	}
-	public static Double max(double a,double b, double c) {
+	public static double max(double a,double b, double c) {
 		if (a>b&&a>c)
 			return a;
 		else if (b>a&&b>c)
