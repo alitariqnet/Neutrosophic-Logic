@@ -74,7 +74,7 @@ public class NeutrosophicLogic {
 	// Service indeterminate function for getting value for good service
 	public static double serviceIndeterminateGood(int a) {
 		
-		if(a<=3)
+		if(a<=2)
 			return 0.0;
 
 		else if (a>2 && a<10)
@@ -129,7 +129,7 @@ public class NeutrosophicLogic {
 	
 	public static double foodIndeterminateDelicious(int a) {
 	
-		if(a<=3)
+		if(a<=2)
 			return 0.0;
 
 		else if (a>2 && a<10)
@@ -195,7 +195,7 @@ public class NeutrosophicLogic {
 	
 	public static double environmentIndeterminateClean(int a) {
 		
-		if(a<=3)
+		if(a<=2)
 			return 0.0;
 
 		else if (a>2 && a<10)
