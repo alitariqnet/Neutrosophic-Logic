@@ -4,6 +4,7 @@ package org.cloudbus.cloudsim.examples;
  * @author Ali Tariq
  * www.github.com/alitariqnet
  * alibabapk@aol.com
+ * This is an example of waiter service tip example with neutrosophic logic.
  * */
 public class NeutrosophicLogic {
 
