@@ -6,7 +6,7 @@ package org.cloudbus.cloudsim.examples;
  * alibabapk@aol.com
  * This is an example of waiter service tip example with neutrosophic logic.
  * */
-public class NeutrosophicLogic {
+public class WaiterServiceTipNeutrosophicLogic {
 
 	public static void main(String[] args) {
 
@@ -84,7 +84,7 @@ public class NeutrosophicLogic {
 		return 1.0;
 	}
 	// Food membership function for rancid food
-	public static double rancidfoodMembership(int a) {
+	public static double rancidFoodMembership(int a) {
 		
 		if(a<=0)
 			return 1.0;
@@ -139,7 +139,7 @@ public class NeutrosophicLogic {
 		return 1.0;
 	}
 	// Food indeterminate function for rancid food
-	public static double rancidfoodIndeterminate(int a) {
+	public static double rancidFoodIndeterminate(int a) {
 		
 		if(a<=0)
 			return 1.0;
