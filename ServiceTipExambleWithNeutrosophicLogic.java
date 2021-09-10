@@ -12,7 +12,7 @@ public class NeutrosophicLogic {
 
 	}
 	
-	// Service membership function for getting value for poor service
+	// Service membership function for poor service
 	public static double serviceMembershipPoor(int a) {
 		
 		if(a<=0)
@@ -24,7 +24,7 @@ public class NeutrosophicLogic {
 		return 0.0;
 	}
 	
-	// Service membership function for getting value for good service
+	// Service membership function for good service
 	public static double serviceMembershipGood(int a) {
 		
 		if(a<=3)
@@ -36,7 +36,7 @@ public class NeutrosophicLogic {
 		return 1.0;
 		}
 	
-	// Service non-membership function for getting value for poor service
+	// Service non-membership function for poor service
 	public static double serviceNonMembershipPoor(int a) {
 		
 		if(a<0)
@@ -48,7 +48,7 @@ public class NeutrosophicLogic {
 		return 1.0;
 	}
 	
-	// Service non-membership function for getting value for good service
+	// Service non-membership function for good service
 	public static double serviceNonMembershipGood(int a) {
 		
 		if(a<=3)
@@ -60,7 +60,7 @@ public class NeutrosophicLogic {
 		return 0.0;
 	}
 	
-	// Service indeterminate function for getting value for poor service
+	// Service indeterminate function for poor service
 	public static double serviceIndeterminatePoor(int a) {
 		
 		if(a<=0)
@@ -72,7 +72,7 @@ public class NeutrosophicLogic {
 		return 0.0;
 	}
 	
-	// Service indeterminate function for getting value for good service
+	// Service indeterminate function for good service
 	public static double serviceIndeterminateGood(int a) {
 		
 		if(a<=2)
@@ -83,7 +83,7 @@ public class NeutrosophicLogic {
 
 		return 1.0;
 	}
-	
+	// Food membership function for rancid food
 	public static double foodMembershipRancid(int a) {
 		
 		if(a<=0)
@@ -94,7 +94,7 @@ public class NeutrosophicLogic {
 
 		return 0.0;
 	}
-	
+	// Food membership function for delicious food
 	public static double foodMembershipDelicious(int a) {
 		
 		if(a<=0)
@@ -105,7 +105,7 @@ public class NeutrosophicLogic {
 
 		return 0.0;
 	}
-	
+	// Food non-membership function for rancid food
 	public static double foodNonMembershipRancid(int a) {
 		
 		if(a<=3)
@@ -116,7 +116,7 @@ public class NeutrosophicLogic {
 
 		return 1.0;
 	}
-	
+	// Food non-membership function for delicious food
 	public static double foodNonMembershipDelicious(int a) {
 		
 		if(a<=3)
@@ -127,7 +127,7 @@ public class NeutrosophicLogic {
 
 		return 1.0;
 	}
-	
+	// Food indeterminate function for delicious food
 	public static double foodIndeterminateDelicious(int a) {
 	
 		if(a<=2)
@@ -138,7 +138,7 @@ public class NeutrosophicLogic {
 
 		return 1.0;
 	}
-	
+	// Food indeterminate function for rancid food
 	public static double foodIndeterminateRancid(int a) {
 		
 		if(a<=0)
@@ -149,7 +149,7 @@ public class NeutrosophicLogic {
 
 		return 0.0;
 	}
-	
+	// Environment membership function for clean environment
 	public static double environmentMembershipClean(int a) {
 		
 		if(a<=3)
@@ -160,7 +160,7 @@ public class NeutrosophicLogic {
 
 		return 1.0;
 	}
-	
+	// Environment membership function for dirty environment
 	public static double environmentMembershipDirty(int a) {
 		
 		if(a<=0)
@@ -171,7 +171,7 @@ public class NeutrosophicLogic {
 
 		return 0.0;
 	}
-	
+	// Environment non-membership function for clean environment
 	public static double environmentNonMembershipClean(int a) {
 		
 		if(a<=3)
@@ -182,7 +182,7 @@ public class NeutrosophicLogic {
 
 		return 1.0;
 	}
-	
+	// Environment non-membership function for dirty environment
 	public static double environmentNonMembershipDirty(int a) {
 		
 		if(a<=3)
@@ -193,7 +193,7 @@ public class NeutrosophicLogic {
 
 		return 1.0;
 	}
-	
+	// Environment indeterminate function for clean environment
 	public static double environmentIndeterminateClean(int a) {
 		
 		if(a<=2)
@@ -204,7 +204,7 @@ public class NeutrosophicLogic {
 
 		return 1.0;
 	}
-	
+	// Environment indeterminate function for dirty environment
 	public static double environmentIndeterminateDirty(int a) {
 		
 		if(a<=0)
@@ -215,12 +215,13 @@ public class NeutrosophicLogic {
 
 		return 0.0;
 	}
-	
+	// Two parameters min function
 	public static double min(double a,double b) {
 		if (a<b)
 			return a;
 		return b;
 	}
+	// Three parameters min function
 	public static double min(double a,double b, double c) {
 		if (a<b&&a<c)
 			return a;
@@ -228,11 +229,13 @@ public class NeutrosophicLogic {
 			return b;
 		return c;
 	}
+	// Two parameters max function
 	public static double max(double a,double b) {
 		if (a>b)
 			return a;
 		return b;
 	}
+	// Three parameters max function
 	public static double max(double a,double b, double c) {
 		if (a>b&&a>c)
 			return a;
