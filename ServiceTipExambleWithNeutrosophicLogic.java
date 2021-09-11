@@ -41,7 +41,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if(a<=0)
 			return 1.0;
 
-		else if (a>0 && a<7)
+		if (a>0 && a<7)
 			return (7-a)/(7-0);
 
 		return 0.0;
@@ -53,7 +53,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if(a<=3)
 			return 0.0;
 		
-		else if (a>3 && a<10)
+		if (a>3 && a<10)
 			return (a-3)/(10-3);
 
 		return 1.0;
@@ -89,7 +89,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if(a<=0)
 			return 1.0;
 
-		else if (a>0 && a<8)
+		if (a>0 && a<8)
 			return ((8-a)/(8-0))*0.5;
 
 		return 0.0;
@@ -101,7 +101,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if(a<=2)
 			return 0.0;
 
-		else if (a>2 && a<10)
+		if (a>2 && a<10)
 			return ((a-2)/(10-2))*0.5;
 
 		return 1.0;
@@ -112,7 +112,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if(a<=0)
 			return 1.0;
 
-		else if (a>0 && a<7)
+		if (a>0 && a<7)
 			return (7-a)/(7-0);
 
 		return 0.0;
@@ -123,7 +123,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if(a<=0)
 			return 1.0;
 
-		else if (a>0 && a<7)
+		if (a>0 && a<7)
 			return (7-a)/(7-0);
 
 		return 0.0;
@@ -134,7 +134,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if(a<=3)
 			return 0.0;
 
-		else if (a>3 && a<10)
+		if (a>3 && a<10)
 			return (a-3)/(10-3);
 
 		return 1.0;
@@ -145,7 +145,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if(a<=3)
 			return 0.0;
 
-		else if (a>3 && a<10)
+		if (a>3 && a<10)
 			return (a-3)/(10-3);
 
 		return 1.0;
