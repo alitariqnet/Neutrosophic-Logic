@@ -12,7 +12,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 	}
 	
-	// Service membership function for poor service
+	// Membership function for poor service
 	public static double poorServiceMembership(int a) {
 		
 		if(a<=0)
@@ -24,7 +24,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		return 0.0;
 	}
 	
-	// Service membership function for good service
+	// Membership function for good service
 	public static double goodServiceMembership(int a) {
 		
 		if(a<=3)
@@ -36,7 +36,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		return 1.0;
 		}
 	
-	// Service non-membership function for poor service
+	// Non-membership function for poor service
 	public static double poorServiceNonMembership(int a) {
 		
 		if(a<0)
@@ -48,7 +48,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		return 1.0;
 	}
 	
-	// Service non-membership function for good service
+	// Non-membership function for good service
 	public static double goodServiceNonMembership(int a) {
 		
 		if(a<=3)
@@ -60,7 +60,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		return 0.0;
 	}
 	
-	// Service indeterminate function for poor service
+	// Indeterminate function for poor service
 	public static double poorServiceIndeterminate(int a) {
 		
 		if(a<=0)
@@ -72,7 +72,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		return 0.0;
 	}
 	
-	// Service indeterminate function for good service
+	// Indeterminate function for good service
 	public static double goodServiceIndeterminate(int a) {
 		
 		if(a<=2)
@@ -83,7 +83,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 1.0;
 	}
-	// Food membership function for rancid food
+	// Membership function for rancid food
 	public static double rancidFoodMembership(int a) {
 		
 		if(a<=0)
@@ -94,7 +94,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 0.0;
 	}
-	// Food membership function for delicious food
+	// Membership function for delicious food
 	public static double deliciusFoodMembership(int a) {
 		
 		if(a<=0)
@@ -105,7 +105,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 0.0;
 	}
-	// Food non-membership function for rancid food
+	// Non-membership function for rancid food
 	public static double rancidFoodNonMembership(int a) {
 		
 		if(a<=3)
@@ -116,7 +116,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 1.0;
 	}
-	// Food non-membership function for delicious food
+	// Non-membership function for delicious food
 	public static double deliciousFoodNonMembership(int a) {
 		
 		if(a<=3)
@@ -127,7 +127,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 1.0;
 	}
-	// Food indeterminate function for delicious food
+	// Indeterminate function for delicious food
 	public static double deliciousFoodIndeterminate(int a) {
 	
 		if(a<=2)
@@ -138,7 +138,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 1.0;
 	}
-	// Food indeterminate function for rancid food
+	// Indeterminate function for rancid food
 	public static double rancidFoodIndeterminate(int a) {
 		
 		if(a<=0)
@@ -149,7 +149,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 0.0;
 	}
-	// Environment membership function for clean environment
+	// Membership function for clean environment
 	public static double cleanEnvironmentMembership(int a) {
 		
 		if(a<=3)
@@ -160,7 +160,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 1.0;
 	}
-	// Environment membership function for dirty environment
+	// Membership function for dirty environment
 	public static double dirtyEnvironmentMembership(int a) {
 		
 		if(a<=0)
@@ -171,7 +171,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 0.0;
 	}
-	// Environment non-membership function for clean environment
+	// Non-membership function for clean environment
 	public static double cleanEnvironmentNonMembership(int a) {
 		
 		if(a<=3)
@@ -182,7 +182,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 1.0;
 	}
-	// Environment non-membership function for dirty environment
+	// Non-membership function for dirty environment
 	public static double dirtyEnvironmentNonMembership(int a) {
 		
 		if(a<=3)
@@ -193,7 +193,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 1.0;
 	}
-	// Environment indeterminate function for clean environment
+	// Indeterminate function for clean environment
 	public static double cleanEnvironmentIndeterminate(int a) {
 		
 		if(a<=2)
@@ -204,7 +204,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		return 1.0;
 	}
-	// Environment indeterminate function for dirty environment
+	// Indeterminate function for dirty environment
 	public static double dirtyEnvironmentIndeterminate(int a) {
 		
 		if(a<=0)
