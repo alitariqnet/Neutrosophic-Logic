@@ -88,7 +88,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 	public static double poorServiceIndeterminate(int a) {
 		
 		if(a<=0)
-			return 1.0;
+			return 0.5;
 
 		if (a>0 && a<8)
 			return ((8-a)/(8-0))*0.5;
@@ -105,7 +105,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if (a>2 && a<10)
 			return ((a-2)/(10-2))*0.5;
 
-		return 1.0;
+		return 0.5;
 	}
 	// Membership function for rancid food
 	public static double rancidFoodMembership(int a) {
@@ -160,13 +160,13 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if (a>2 && a<10)
 			return ((a-2)/(10-2))*0.5;
 
-		return 1.0;
+		return 0.5;
 	}
 	// Indeterminate function for rancid food
 	public static double rancidFoodIndeterminate(int a) {
 		
 		if(a<=0)
-			return 1.0;
+			return 0.5;
 
 		if (a>0 && a<8)
 			return ((8-a)/(8-0))*0.5;
@@ -226,13 +226,13 @@ public class WaiterServiceTipNeutrosophicLogic {
 		if (a>2 && a<10)
 			return ((a-2)/(10-2))*0.5;
 
-		return 1.0;
+		return 0.5;
 	}
 	// Indeterminate function for dirty environment
 	public static double dirtyEnvironmentIndeterminate(int a) {
 		
 		if(a<=0)
-			return 1.0;
+			return 0.5;
 	
 		if (a>0 && a<=8)
 			return ((8-a)/(8-0))*0.5;
