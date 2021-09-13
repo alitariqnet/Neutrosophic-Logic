@@ -1,5 +1,6 @@
 package org.cloudbus.cloudsim.examples;
 
+import java.lang.Math;
 /**
  * @author Ali Tariq
  * www.github.com/alitariqnet
@@ -240,30 +241,18 @@ public class WaiterServiceTipNeutrosophicLogic {
 	}
 	// Two parameters min function
 	public static double min(double a,double b) {
-		if (a<b)
-			return a;
-		return b;
+		return min(a,b);
 	}
 	// Three parameters min function
 	public static double min(double a,double b, double c) {
-		if (a<b&&a<c)
-			return a;
-		if (b<a&&b<c)
-			return b;
-		return c;
+		return min(c,min(a,b));
 	}
 	// Two parameters max function
 	public static double max(double a,double b) {
-		if (a>b)
-			return a;
-		return b;
+		return max(a,b);
 	}
 	// Three parameters max function
 	public static double max(double a,double b, double c) {
-		if (a>b&&a>c)
-			return a;
-		if (b>a&&b>c)
-			return b;
-		return c;
+		return max(c,max(a,b));
 	}
 }
