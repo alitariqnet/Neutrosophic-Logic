@@ -10,7 +10,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 	public static void main(String[] args) {
 		
-		double poorServiceM = ServiceMembership(6,"POOR");
+		double poorServiceM = ServiceMembership(6,"POORh");
 		double poorServiceNM = ServiceNonMembership(6,"POOR");
 		double poorServiceI = ServiceIndeterminate(6,"POOR");
 		double goodServiceM = ServiceMembership(6,"GOOD");
@@ -63,7 +63,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 			return 1.0;
 		}
-
+		System.out.println("Invalid category in ServiceMembership");
 		return 0.0;
 	}
 	
@@ -89,6 +89,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 			return 0.0;
 		}
+		System.out.println("Invalid category in ServiceNonMembership");
 		return 0.0;
 	}
 	
@@ -114,6 +115,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 			return 0.5;
 		}
+		System.out.println("Invalid category in ServiceIndeterminate");
 		return 0.0;
 	}
 	
@@ -138,6 +140,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 			return 1.0;
 		}
+		System.out.println("Invalid category in FoodMembership");
 		return a;
 	}
 	
@@ -163,6 +166,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 			return 0.0;
 		}
+		System.out.println("Invalid category in FoodNonMembership");
 		return a;
 	}
 	
@@ -187,6 +191,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 			return 0.5;
 		}
+		System.out.println("Invalid category in FoodIndeterminate");
 		return a;
 	}
 	
@@ -212,6 +217,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 			return 1.0;
 		}
+		System.out.println("Invalid category in EnvironmentMembership");
 		return a;
 	}
 	// Non-membership function for dirty environment
@@ -235,6 +241,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 			return 1.0;
 		}
+		System.out.println("Invalid category in EnvironmentNonMembership");
 		return a;
 	}
 	
@@ -259,7 +266,9 @@ public class WaiterServiceTipNeutrosophicLogic {
 				return ((a-2)/(10-2))*0.5;
 
 			return 0.5;
-		}return a;
+		}
+		System.out.println("Invalid category in EnvironmentIndeterminate");
+		return a;
 	}
 	// Two parameters min function
 	public static double min(double a,double b) {
