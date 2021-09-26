@@ -8,267 +8,271 @@ import java.lang.Math;
  * */
 public class WaiterServiceTipNeutrosophicLogic {
 
+			private static double poorServiceM = 0.0;
+			private static double poorServiceNM = 0.0;
+			private static double poorServiceI = 0.0;
+			private static double goodServiceM = 0.0;
+			private static double goodServiceNM = 0.0;
+			private static double goodServiceI = 0.0;
+			
+			private static double rancidFoodM = 0.0;
+			private static double rancidFoodNM = 0.0;
+			private static double rancidFoodI = 0.0;
+			private static double deliciousFoodM = 0.0;
+			private static double deliciousFoodNM = 0.0;
+			private static double deliciousFoodI = 0.0;
+			
+			private static double dirtyEnvironmentM = 0.0;
+			private static double dirtyEnvironmentNM = 0.0;
+			private static double dirtyEnvironmentI = 0.0;
+			private static double cleanEnvironmentM = 0.0;
+			private static double cleanEnvironmentNM = 0.0;
+			private static double cleanEnvironmentI = 0.0;
+			
 	public static void main(String[] args) {
 		
-		double poorServiceM = ServiceMembership(6,"POORh");
-		double poorServiceNM = ServiceNonMembership(6,"POOR");
-		double poorServiceI = ServiceIndeterminate(6,"POOR");
-		double goodServiceM = ServiceMembership(6,"GOOD");
-		double goodServiceNM = ServiceNonMembership(6,"GOOD");
-		double goodServiceI = ServiceIndeterminate(6,"GOOD");
+		ServiceMembership(6,"POOR");
+		ServiceNonMembership(6,"POOR");
+		ServiceIndeterminate(6,"POOR");
+		ServiceMembership(6,"GOOD");
+		ServiceNonMembership(6,"GOOD");
+		ServiceIndeterminate(6,"GOOD");
 		
 		System.out.println(poorServiceM+" "+poorServiceNM+" "+poorServiceI);
 		System.out.println(goodServiceM+" "+goodServiceNM+" "+goodServiceI);
 		
-		double rancidFoodM = FoodMembership(2,"rancid");
-		double rancidFoodNM = FoodNonMembership(2,"rancid");
-		double rancidFoodI = FoodIndeterminate(2,"rancid");
-		double deliciousFoodM = FoodMembership(2,"delicious");
-		double deliciousFoodNM = FoodNonMembership(2,"delicious");
-		double deliciousFoodI = FoodIndeterminate(2,"delciious");
+		FoodMembership(2,"rancid");
+		FoodNonMembership(2,"rancid");
+		FoodIndeterminate(2,"rancid");
+		FoodMembership(2,"delicious");
+		FoodNonMembership(2,"delicious");
+		FoodIndeterminate(2,"delciious");
 		
 		System.out.println(rancidFoodM+" "+rancidFoodNM+" "+rancidFoodI);
 		System.out.println(deliciousFoodM+" "+deliciousFoodNM+" "+deliciousFoodI);
 		
-		double dirtyEnvironmentM = EnvironmentMembership(8,"dirty");
-		double dirtyEnvironmentNM = EnvironmentNonMembership(8,"dirty");
-		double dirtyEnvironmentI = EnvironmentIndeterminate(8,"dirty"); 
-		double cleanEnvironmentM = EnvironmentMembership(8,"clean");
-		double cleanEnvironmentNM = EnvironmentNonMembership(8,"clean");
-		double cleanEnvironmentI = EnvironmentIndeterminate(8,"clean"); 
+		EnvironmentMembership(8,"dirty");
+		EnvironmentNonMembership(8,"dirty");
+		EnvironmentIndeterminate(8,"dirty"); 
+		EnvironmentMembership(8,"clean");
+		EnvironmentNonMembership(8,"clean");
+		EnvironmentIndeterminate(8,"clean"); 
 		
 		System.out.println(dirtyEnvironmentM+" "+dirtyEnvironmentNM+" "+dirtyEnvironmentI);
 		System.out.println(cleanEnvironmentM+" "+cleanEnvironmentNM+" "+cleanEnvironmentI);
 	}
 	
 	// Membership function for Service
-	public static double ServiceMembership(double a, String cat) {
+	public static void ServiceMembership(double a, String cat) {
 
 		if(cat.equalsIgnoreCase("POOR")) {
 			if(a<=0)
-				return 1.0;
+				poorServiceM = 1.0;
 
 			if (a>0 && a<7)
-				return (7-a)/(7-0);
+				poorServiceM =  (7-a)/(7-0);
 
-			return 0.0;
+			poorServiceM = 0.0;
 		}
 
 		if(cat.equalsIgnoreCase("GOOD")) {
 			if(a<=3)
-				return 0.0;
+				goodServiceM = 0.0;
 
 			if (a>3 && a<10)
-				return (a-3)/(10-3);
+				goodServiceM = (a-3)/(10-3);
 
-			return 1.0;
+			goodServiceM = 1.0;
 		}
-		System.out.println("Invalid category in ServiceMembership");
-		return 0.0;
 	}
 	
 	// Non-membership function for Service
-	public static double ServiceNonMembership(double a,String cat) {
+	public static void ServiceNonMembership(double a,String cat) {
 		if(cat.equalsIgnoreCase("POOR")) {
 			if(a<0)
-				return 0.0;
+				poorServiceNM = 0.0;
 
 			if (a>0 && a<7)
-				return (a-0)/(7-0);
+				poorServiceNM = (a-0)/(7-0);
 
-			return 1.0;
+			poorServiceNM = 1.0;
 
 		} 
 
 		if(cat.equalsIgnoreCase("GOOD")) {
 			if(a<=3)
-				return 1.0;
+				goodServiceNM = 1.0;
 
 			if (a>3 && a<10)
-				return (10-a)/(10-3);
+				goodServiceNM = (10-a)/(10-3);
 
-			return 0.0;
+			goodServiceNM = 0.0;
 		}
-		System.out.println("Invalid category in ServiceNonMembership");
-		return 0.0;
 	}
 	
 	// Indeterminate function for Service
-	public static double ServiceIndeterminate(double a, String cat) {
+	public static void ServiceIndeterminate(double a, String cat) {
 		if(cat.equalsIgnoreCase("POOR")) {
 			if(a<=0)
-				return 1.0;
+				poorServiceI = 1.0;
 
 			if (a>0 && a<8)
-				return ((8-a)/(8-0))*0.5;
+				poorServiceI = ((8-a)/(8-0))*0.5;
 
-			return 0.5;
+			poorServiceI = 0.5;
 		}
 
 		if(cat.equalsIgnoreCase("GOOD")) {
 
 			if(a<=2)
-				return 0.0;
+				goodServiceI = 0.0;
 
 			if (a>2 && a<10)
-				return ((a-2)/(10-2))*0.5;
+				goodServiceI = ((a-2)/(10-2))*0.5;
 
-			return 0.5;
+			goodServiceI = 0.5;
 		}
-		System.out.println("Invalid category in ServiceIndeterminate");
-		return 0.0;
 	}
 	
 	// Membership function for Food
-	public static double FoodMembership(double a, String cat) {
+	public static void FoodMembership(double a, String cat) {
 		if(cat.equalsIgnoreCase("RANCID")) {
 			if(a<=0)
-				return 1.0;
+				rancidFoodM = 1.0;
 
 			if (a>0 && a<7)
-				return (7-a)/(7-0);
+				rancidFoodM = (7-a)/(7-0);
 
-			return 0.0;
+			rancidFoodM = 0.0;
 		}
 		if(cat.equalsIgnoreCase("DELICIOUS")) {
 
 			if(a<=3)
-				return 0.0;
+				deliciousFoodM = 0.0;
 
 			if (a>3 && a<10)
-				return (a-3)/(10-3);
+				deliciousFoodM = (a-3)/(10-3);
 
-			return 1.0;
+			deliciousFoodM = 1.0;
 		}
-		System.out.println("Invalid category in FoodMembership");
-		return a;
 	}
 	
 	// Non-membership function for rancid food
-	public static double FoodNonMembership(double a, String cat) {
+	public static void FoodNonMembership(double a, String cat) {
 		if(cat.equalsIgnoreCase("RANCID")){
 			if(a<=0)
-				return 0.0;
+				rancidFoodNM = 0.0;
 
 			if (a>0 && a<7)
-				return (7-a)/(7-0);
+				rancidFoodNM = (7-a)/(7-0);
 
-			return 1.0;
+			rancidFoodNM = 1.0;
 
 		}
 		if(cat.equalsIgnoreCase("DELICIOUS")){
 
 			if(a<=3)
-				return 1.0;
+				deliciousFoodNM = 1.0;
 
 			if (a>3 && a<10)
-				return (a-3)/(10-3);
+				deliciousFoodNM = (a-3)/(10-3);
 
-			return 0.0;
+			deliciousFoodNM = 0.0;
 		}
-		System.out.println("Invalid category in FoodNonMembership");
-		return a;
 	}
 	
 	// Indeterminate function for Food
-	public static double FoodIndeterminate(double a, String cat) {
+	public static void FoodIndeterminate(double a, String cat) {
 		if(cat.equalsIgnoreCase("RANCID")){
 			if(a<=0)
-				return 0.5;
+				rancidFoodI = 0.5;
 
 			if (a>0 && a<8)
-				return ((8-a)/(8-0))*0.5;
+				rancidFoodI = ((8-a)/(8-0))*0.5;
 
-			return 0.0;
+			rancidFoodI = 0.0;
 		}
 		if(cat.equalsIgnoreCase("DELICIOUS")){
 
 			if(a<=2)
-				return 0.0;
+				deliciousFoodI = 0.0;
 
 			if (a>2 && a<10)
-				return ((a-2)/(10-2))*0.5;
+				deliciousFoodI = ((a-2)/(10-2))*0.5;
 
-			return 0.5;
+			deliciousFoodI = 0.5;
 		}
-		System.out.println("Invalid category in FoodIndeterminate");
-		return a;
 	}
 	
 	// Membership function for environment
-	public static double EnvironmentMembership(double a, String cat) {
+	public static void EnvironmentMembership(double a, String cat) {
 		if(cat.equalsIgnoreCase("dirty")){
 			if(a<=0)
-				return 1.0;
+				dirtyEnvironmentM = 1.0;
 
 			if (a>0 && a<7)
-				return (7-a)/(7-0);
+				dirtyEnvironmentM = (7-a)/(7-0);
 
-			return 0.0;
+			dirtyEnvironmentM = 0.0;
 		}
 		
 		if(cat.equalsIgnoreCase("clean")){
 
 			if(a<=3)
-				return 0.0;
+				cleanEnvironmentM = 0.0;
 
 			if (a>3 && a<10)
-				return (a-3)/(10-3);
+				cleanEnvironmentM = (a-3)/(10-3);
 
-			return 1.0;
+			cleanEnvironmentM = 1.0;
 		}
-		System.out.println("Invalid category in EnvironmentMembership");
-		return a;
 	}
+	
 	// Non-membership function for dirty environment
-	public static double EnvironmentNonMembership(double a, String cat) {
+	public static void EnvironmentNonMembership(double a, String cat) {
 		if(cat.equalsIgnoreCase("dirty")){
 			if(a<=0)
-				return 0.0;
+				dirtyEnvironmentNM = 0.0;
 
 			if (a>0 && a<7)
-				return (7-a)/(7-0);
+				dirtyEnvironmentNM = (7-a)/(7-0);
 
-			return 1.0;
+			dirtyEnvironmentNM = 1.0;
 		}
 		if(cat.equalsIgnoreCase("clean")){
 
 			if(a<=3)
-				return 0.0;
+				cleanEnvironmentNM = 0.0;
 
 			if (a>3 && a<10)
-				return (a-3)/(10-3);
+				cleanEnvironmentNM = (a-3)/(10-3);
 
-			return 1.0;
+			cleanEnvironmentNM = 1.0;
 		}
-		System.out.println("Invalid category in EnvironmentNonMembership");
-		return a;
 	}
 	
 	// Indeterminate function for dirty environment
-	public static double EnvironmentIndeterminate(double a, String cat) {
+	public static void EnvironmentIndeterminate(double a, String cat) {
 		if(cat.equalsIgnoreCase("dirty")){
 			if(a<=0)
-				return 0.5;
+				dirtyEnvironmentI = 0.5;
 
 			if (a>0 && a<8)
-				return ((8-a)/(8-0))*0.5;
+				dirtyEnvironmentI = ((8-a)/(8-0))*0.5;
 
-			return 0.0;
+			dirtyEnvironmentI = 0.0;
 
 		}
 		if(cat.equalsIgnoreCase("clean")) {
 
 			if(a<=2)
-				return 0.0;
+				cleanEnvironmentI = 0.0;
 
 			if (a>2 && a<10)
-				return ((a-2)/(10-2))*0.5;
+				cleanEnvironmentI = ((a-2)/(10-2))*0.5;
 
-			return 0.5;
+			cleanEnvironmentI = 0.5;
 		}
-		System.out.println("Invalid category in EnvironmentIndeterminate");
-		return a;
 	}
 	// Two parameters min function
 	public static double min(double a,double b) {
