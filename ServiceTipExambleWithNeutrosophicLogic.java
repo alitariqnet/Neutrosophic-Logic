@@ -15,7 +15,7 @@ public class WaiterServiceTipNeutrosophicLogic {
 		double poorServiceI = poorServiceIndeterminate(6);
 		double goodServiceM = goodServiceMembership(6);
 		double goodServiceNM = goodServiceNonMembership(6);
-		double goodServiceI = poorServiceIndeterminate(6);
+		double goodServiceI = goodServiceIndeterminate(6);
 		System.out.println(poorServiceM+" "+poorServiceNM+" "+poorServiceI);
 		System.out.println(goodServiceM+" "+goodServiceNM+" "+goodServiceI);
 		double rancidFoodM = rancidFoodMembership(2);
