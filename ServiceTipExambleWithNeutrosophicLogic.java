@@ -7,320 +7,346 @@ import java.lang.Math;
  * alibabapk@aol.com
  * */
 public class WaiterServiceTipNeutrosophicLogic {
-	int POOR = 1;
-	int GOOD = 2;
-	int RANCID = 3;
-	int DELICIOUS = 4;
-	int DIRTY = 5;
-	int CLEAN = 6;
-			static double poorServiceM = 0;
-			static double poorServiceNM = 0;
-			static double poorServiceI = 0;
-			static double goodServiceM = 0;
-			static double goodServiceNM = 0;
-			static double goodServiceI = 0;
 
-			static double rancidFoodM = 0;
-			static double rancidFoodNM = 0;
-			static double rancidFoodI = 0;
-			static double deliciousFoodM = 0;
-			static double deliciousFoodNM = 0;
-			static double deliciousFoodI = 0;
-			
-			static double dirtyEnvironmentM = 0;
-			static double dirtyEnvironmentNM = 0;
-			static double dirtyEnvironmentI = 0; 
-			static double cleanEnvironmentM = 0;
-			static double cleanEnvironmentNM = 0;
-			static double cleanEnvironmentI = 0; 
-			
+	static int POOR = 1;
+	static int GOOD = 2;
+	static int RANCID = 1;
+	static int DELICIOUS = 2;
+	static int DIRTY = 1;
+	static int CLEAN = 2;
+
+	static double poorServiceM = 0;
+	static double poorServiceNM = 0;
+	static double poorServiceI = 0;
+	static double goodServiceM = 0;
+	static double goodServiceNM = 0;
+	static double goodServiceI = 0;
+
+	static double rancidFoodM = 0;
+	static double rancidFoodNM = 0;
+	static double rancidFoodI = 0;
+	static double deliciousFoodM = 0;
+	static double deliciousFoodNM = 0;
+	static double deliciousFoodI = 0;
+
+	static double dirtyEnvironmentM = 0;
+	static double dirtyEnvironmentNM = 0;
+	static double dirtyEnvironmentI = 0; 
+	static double cleanEnvironmentM = 0;
+	static double cleanEnvironmentNM = 0;
+	static double cleanEnvironmentI = 0; 
+
 	public static void main(String[] args) {
-		
-		poorServiceM = ServiceMembership(6,1);
-		poorServiceNM = ServiceNonMembership(6,1);
-		poorServiceI = ServiceIndeterminate(6,1);
-		goodServiceM = ServiceMembership(6,2);
-		goodServiceNM = ServiceNonMembership(6,2);
-		goodServiceI = ServiceIndeterminate(6,2);
-		
+
+		ServiceMembership(6,POOR);
+		ServiceNonMembership(6,POOR);
+		ServiceIndeterminate(6,POOR);
+		ServiceMembership(6,GOOD);
+		ServiceNonMembership(6,GOOD);
+		ServiceIndeterminate(6,GOOD);
+
 		System.out.println(poorServiceM+" "+poorServiceNM+" "+poorServiceI);
 		System.out.println(goodServiceM+" "+goodServiceNM+" "+goodServiceI);
-		
-		rancidFoodM = FoodMembership(2,3);
-		rancidFoodNM = FoodNonMembership(2,3);
-		rancidFoodI = FoodIndeterminate(2,3);
-		deliciousFoodM = FoodMembership(2,4);
-		deliciousFoodNM = FoodNonMembership(2,4);
-		deliciousFoodI = FoodIndeterminate(2,4);
-		
+
+		FoodMembership(2,RANCID);
+		FoodNonMembership(2,RANCID);
+		FoodIndeterminate(2,RANCID);
+		FoodMembership(2,DELICIOUS);
+		FoodNonMembership(2,DELICIOUS);
+		FoodIndeterminate(2,DELICIOUS);
+
 		System.out.println(rancidFoodM+" "+rancidFoodNM+" "+rancidFoodI);
 		System.out.println(deliciousFoodM+" "+deliciousFoodNM+" "+deliciousFoodI);
-		
-		dirtyEnvironmentM = EnvironmentMembership(8,5);
-		dirtyEnvironmentNM = EnvironmentNonMembership(8,5);
-		dirtyEnvironmentI = EnvironmentIndeterminate(8,5); 
-		cleanEnvironmentM = EnvironmentMembership(8,6);
-		cleanEnvironmentNM = EnvironmentNonMembership(8,6);
-		cleanEnvironmentI = EnvironmentIndeterminate(8,6); 
-		
+
+		EnvironmentMembership(8,DIRTY);
+		EnvironmentNonMembership(8,DIRTY);
+		EnvironmentIndeterminate(8,DIRTY); 
+		EnvironmentMembership(8,CLEAN);
+		EnvironmentNonMembership(8,CLEAN);
+		EnvironmentIndeterminate(8,CLEAN); 
+
 		System.out.println(dirtyEnvironmentM+" "+dirtyEnvironmentNM+" "+dirtyEnvironmentI);
 		System.out.println(cleanEnvironmentM+" "+cleanEnvironmentNM+" "+cleanEnvironmentI);
 	}
-	
+
 	// Membership function for Service
-	public static double ServiceMembership(double a, int b) {
-
-		if(b==1) {
+	public static void ServiceMembership(double a, int b) {
+		switch(b) {
+		case 1: 
+		{
 			if(a<=0)
-				return 1.0;
-
-			if (a>0 && a<7)
-				return (7-a)/(7-0);
-
-			return 0.0;
+				poorServiceM =  1.0;
+			else if (a>0 && a<7)
+				poorServiceM =  (7-a)/(7-0);
+			else
+				poorServiceM =  0.0;
+			break;
 		}
-
-		if(b==2) {
+		case 2: 
+		{
 			if(a<=3)
-				return 0.0;
-
-			if (a>3 && a<10)
-				return (a-3)/(10-3);
-
-			return 1.0;
+				goodServiceM =  0.0;
+			else if (a>3 && a<10)
+				goodServiceM =  (a-3)/(10-3);
+			else
+				goodServiceM =  1.0;
+			break;
 		}
-		System.out.println("Invalid category in ServiceMembership");
-		return 0.0;
+		default:
+			System.out.println("Invalid category in ServiceMembership");
+			break;
+		}
 	}
-	
+
 	// Non-membership function for Service
-	public static double ServiceNonMembership(double a,int b) {
-		if(b==1) {
+	public static void ServiceNonMembership(double a,int b) {
+		switch(b) {
+		case 1: 
+		{
 			if(a<0)
-				return 0.0;
-
-			if (a>0 && a<7)
-				return (a-0)/(7-0);
-
-			return 1.0;
-
+				poorServiceNM =  0.0;
+			else if (a>0 && a<7)
+				poorServiceNM =  (a-0)/(7-0);
+			else
+				poorServiceNM =  1.0;
+			break;
 		} 
 
-		if(b==2) {
+		case 2: 
+		{
 			if(a<=3)
-				return 1.0;
-
-			if (a>3 && a<10)
-				return (10-a)/(10-3);
-
-			return 0.0;
+				goodServiceNM =  1.0;
+			else if (a>3 && a<10)
+				goodServiceNM =  (10-a)/(10-3);
+			else
+				goodServiceNM =  0.0;
+			break;
 		}
-		System.out.println("Invalid category in ServiceNonMembership");
-		return 0.0;
+		default:
+			System.out.println("Invalid category in ServiceNonMembership");
+			break;
+		}
 	}
-	
+
 	// Indeterminate function for Service
-	public static double ServiceIndeterminate(double a, int b) {
-		if(b==1) {
+	public static void ServiceIndeterminate(double a, int b) {
+		switch(b) {
+		case 1: 
+		{
 			if(a<=0)
-				return 1.0;
-
-			if (a>0 && a<8)
-				return ((8-a)/(8-0))*0.5;
-
-			return 0.5;
+				poorServiceI =  1.0;
+			else if (a>0 && a<8)
+				poorServiceI =  ((8-a)/(8-0))*0.5;
+			else
+				poorServiceI =  0.5;
+			break;
 		}
 
-		if(b==2) {
-
+		case 2: 
+		{
 			if(a<=2)
-				return 0.0;
-
-			if (a>2 && a<10)
-				return ((a-2)/(10-2))*0.5;
-
-			return 0.5;
+				goodServiceI =  0.0;
+			else if (a>2 && a<10)
+				goodServiceI =  ((a-2)/(10-2))*0.5;
+			else
+				goodServiceI =  0.5;
+			break;
 		}
-		System.out.println("Invalid category in ServiceIndeterminate");
-		return 0.0;
+		default:
+			System.out.println("Invalid category in ServiceIndeterminate");
+			break;
+		}
 	}
-	
+
 	// Membership function for Food
-	public static double FoodMembership(double a, int b) {
-		if(b==3) {
+	public static void FoodMembership(double a, int b) {
+		switch(b) {
+		case 1: 
+		{
 			if(a<=0)
-				return 1.0;
-
-			if (a>0 && a<7)
-				return (7-a)/(7-0);
-
-			return 0.0;
+				rancidFoodM =  1.0;
+			else if (a>0 && a<7)
+				rancidFoodM =  (7-a)/(7-0);
+			else
+				rancidFoodM =  0.0;
+			break;
 		}
-		if(b==4) {
-
+		case 2: 
+		{
 			if(a<=3)
-				return 0.0;
-
-			if (a>3 && a<10)
-				return (a-3)/(10-3);
-
-			return 1.0;
+				deliciousFoodM =  0.0;
+			else if (a>3 && a<10)
+				deliciousFoodM =  (a-3)/(10-3);
+			else
+				deliciousFoodM =  1.0;
+			break;
 		}
-		System.out.println("Invalid category in FoodMembership");
-		return a;
+		default:
+			System.out.println("Invalid category in FoodMembership");
+			break;
+		}
 	}
-	
+
 	// Non-membership function for rancid food
-	public static double FoodNonMembership(double a, int b) {
-		if(b==3){
+	public static void FoodNonMembership(double a, int b) {
+		switch(b) {
+		case 1: 
+		{
 			if(a<=0)
-				return 0.0;
-
-			if (a>0 && a<7)
-				return (7-a)/(7-0);
-
-			return 1.0;
-
+				rancidFoodNM =  0.0;
+			else if (a>0 && a<7)
+				rancidFoodNM =  (7-a)/(7-0);
+			else
+				rancidFoodNM =  1.0;
+			break;
 		}
-		if(b==4){
-
+		case 2: 
+		{
 			if(a<=3)
-				return 1.0;
-
-			if (a>3 && a<10)
-				return (a-3)/(10-3);
-
-			return 0.0;
+				deliciousFoodNM =  1.0;
+			else if (a>3 && a<10)
+				deliciousFoodNM =  (a-3)/(10-3);
+			else
+				deliciousFoodNM =  0.0;
+			break;
 		}
-		System.out.println("Invalid category in FoodNonMembership");
-		return a;
+		default:
+			System.out.println("Invalid category in FoodNonMembership");
+			break;
+		}
 	}
-	
+
 	// Indeterminate function for Food
-	public static double FoodIndeterminate(double a, int b) {
-		if(b==3){
+	public static void FoodIndeterminate(double a, int b) {
+		switch(b) {
+		case 1: 
+		{
 			if(a<=0)
-				return 0.5;
-
-			if (a>0 && a<8)
-				return ((8-a)/(8-0))*0.5;
-
-			return 0.0;
+				rancidFoodI =  0.5;
+			else if (a>0 && a<8)
+				rancidFoodI =  ((8-a)/(8-0))*0.5;
+			else
+				rancidFoodI =  0.0;
+			break;
 		}
-		if(b==4){
-
+		case 2: 
+		{
 			if(a<=2)
-				return 0.0;
-
-			if (a>2 && a<10)
-				return ((a-2)/(10-2))*0.5;
-
-			return 0.5;
+				deliciousFoodI =  0.0;
+			else if (a>2 && a<10)
+				deliciousFoodI =  ((a-2)/(10-2))*0.5;
+			else
+				deliciousFoodI =  0.5;
+			break;
 		}
-		System.out.println("Invalid category in FoodIndeterminate");
-		return a;
+		default:
+			System.out.println("Invalid category in FoodIndeterminate");
+			break;
+		}
 	}
-	
+
 	// Membership function for environment
-	public static double EnvironmentMembership(double a, int b) {
-		if(b==5){
+	public static void EnvironmentMembership(double a, int b) {
+		switch(b) {
+		case 1: 
+		{
 			if(a<=0)
-				return 1.0;
-
-			if (a>0 && a<7)
-				return (7-a)/(7-0);
-
-			return 0.0;
+				dirtyEnvironmentM =  1.0;
+			else if (a>0 && a<7)
+				dirtyEnvironmentM =  (7-a)/(7-0);
+			else
+				dirtyEnvironmentM =  0.0;
+			break;
 		}
-		
-		if(b==6){
-
+		case 2: 
+		{
 			if(a<=3)
-				return 0.0;
-
-			if (a>3 && a<10)
-				return (a-3)/(10-3);
-
-			return 1.0;
+				cleanEnvironmentM =  0.0;
+			else if (a>3 && a<10)
+				cleanEnvironmentM =  (a-3)/(10-3);
+			else
+				cleanEnvironmentM =  1.0;
+			break;
 		}
-		System.out.println("Invalid category in EnvironmentMembership");
-		return a;
+		default:
+			System.out.println("Invalid category in EnvironmentMembership");
+			break;
+		}
 	}
 	// Non-membership function for dirty environment
-	public static double EnvironmentNonMembership(double a, int b) {
-		if(b==5){
-			if(a<=0)
-				return 0.0;
-
-			if (a>0 && a<7)
-				return (7-a)/(7-0);
-
-			return 1.0;
-		}
-		if(b==6){
-
-			if(a<=3)
-				return 0.0;
-
-			if (a>3 && a<10)
-				return (a-3)/(10-3);
-
-			return 1.0;
-		}
-		System.out.println("Invalid category in EnvironmentNonMembership");
-		return a;
-	}
-	
-	// Indeterminate function for dirty environment
-	public static double EnvironmentIndeterminate(double a, int b) {
+	public static void EnvironmentNonMembership(double a, int b) {
 		switch(b) {
-	case 5:{
-		if(b==5){
+		case 1: 
+		{
 			if(a<=0)
-				return 0.5;
+				dirtyEnvironmentNM =  0.0;
+			else if (a>0 && a<7)
+				dirtyEnvironmentNM =  (7-a)/(7-0);
+			else
+				dirtyEnvironmentNM =  1.0;
+			break;
+		}
+		case 2: 
+		{
+			if(a<=3)
+				cleanEnvironmentNM =  0.0;
+			else if (a>3 && a<10)
+				cleanEnvironmentNM =  (a-3)/(10-3);
+			else
+				cleanEnvironmentNM =  1.0;
+			break;
+		}
+		default:
+			System.out.println("Invalid category in EnvironmentNonMembership");
+			break;
+		}
+	}
 
-			if (a>0 && a<8)
-				return ((8-a)/(8-0))*0.5;
-
-			return 0.0;
-
-		}}
-	case 6:{
-		if(b==6) {
-
+	// Indeterminate function for dirty environment
+	public static void EnvironmentIndeterminate(double a, int b) {
+		switch(b) {
+		case 1:{
+			if(a<=0)
+				dirtyEnvironmentI =  0.5;
+			else if (a>0 && a<8)
+				dirtyEnvironmentI =  ((8-a)/(8-0))*0.5;
+			else
+				dirtyEnvironmentI =  0.0;
+			break;
+		}
+		case 2:{
 			if(a<=2)
-				return 0.0;
-
-			if (a>2 && a<10)
-				return ((a-2)/(10-2))*0.5;
-
-			return 0.5;
-		}}
-		
-	default: 
-		System.out.println("Invalid category in EnvironmentIndeterminate");
-	return a;
+				cleanEnvironmentI =  0.0;
+			else if (a>2 && a<10)
+				cleanEnvironmentI =  ((a-2)/(10-2))*0.5;
+			else
+				cleanEnvironmentI =  0.5;
+			break;
+		}
+		default: 
+			System.out.println("Invalid category in EnvironmentIndeterminate");
+			break;
 		}
 	}
 	// Two parameters min function
 	public static double min(double a,double b) {
-		
+
 		return min(a,b);
 	}
 	// Two parameters max function
 	public static double max(double a,double b) {
-		
+
 		return max(a,b);
 	}
 	// Three parameters min function
 	public static double min(double a,double b, double c) {
-		
+
 		return min(c,min(a,b));
 	}
 	// Three parameters max function
 	public static double max(double a,double b, double c) {
-		
+
 		return max(c,max(a,b));
 	}
-	
+
 }
