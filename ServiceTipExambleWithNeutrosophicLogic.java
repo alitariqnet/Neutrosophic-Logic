@@ -37,19 +37,30 @@ public class WaiterServiceTipNeutrosophicLogic {
 
 		Service(6);
 		
-
-		System.out.println(poorServiceM+" "+poorServiceNM+" "+poorServiceI);
-		System.out.println(goodServiceM+" "+goodServiceNM+" "+goodServiceI);
-
+		System.out.println("Poor service membership: "+poorServiceM);
+		System.out.println("Good service membership: "+goodServiceM);
+		System.out.println("Poor service non-membership:  "+poorServiceNM);
+		System.out.println("Good service non-membership:  "+goodServiceNM);
+		System.out.println("Poor service indeterminate: "+poorServiceI);
+		System.out.println("Good service indeterminate: "+goodServiceI);
+		
 		Food(2);
 		
-		System.out.println(rancidFoodM+" "+rancidFoodNM+" "+rancidFoodI);
-		System.out.println(deliciousFoodM+" "+deliciousFoodNM+" "+deliciousFoodI);
-
+		System.out.println("Rancid food membership: "+rancidFoodM);
+		System.out.println("Delicious food membership: "+deliciousFoodM);
+		System.out.println("Rancid food non-membership: "+rancidFoodNM);
+		System.out.println("Delicious food non-membership: "+deliciousFoodNM);
+		System.out.println("Rancid food indeterminate: "+rancidFoodI);
+		System.out.println("Delicious food indeterminate: "+deliciousFoodI);
+		
 		Environment(6); 
 
-		System.out.println(dirtyEnvironmentM+" "+dirtyEnvironmentNM+" "+dirtyEnvironmentI);
-		System.out.println(cleanEnvironmentM+" "+cleanEnvironmentNM+" "+cleanEnvironmentI);
+		System.out.println("Dirty environment membership: "+dirtyEnvironmentM);
+		System.out.println("Clean environment membership: "+cleanEnvironmentM);
+		System.out.println("Dirty environment non-membership: "+dirtyEnvironmentNM);
+		System.out.println("Clean environment non-membership: "+cleanEnvironmentNM);
+		System.out.println("Dirty environment indeterminate: "+dirtyEnvironmentI);
+		System.out.println("Clean environment indeterminate: "+cleanEnvironmentI);
 		
 		//maxT = max(goodServiceM,deliciousFoodM,cleanEnvironmentM);
 		//maxI = max(goodServiceI,deliciousFoodI,cleanEnvironmentI);
